@@ -8,7 +8,7 @@ using Catedra1___WebMovil.Src.Interface;
 
 namespace Catedra1___WebMovil.Src.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly DataContext _dataContext;
 

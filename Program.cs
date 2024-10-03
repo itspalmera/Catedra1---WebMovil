@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Catedra1___WebMovil.Src.Models;
 using Catedra1___WebMovil.Src.Data;
+using Catedra1___WebMovil.Src.Repositories;
+using Catedra1___WebMovil.Src.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlite("Data Source=catedra1.db");
 });
+
+builder.Services.AddControllers();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
