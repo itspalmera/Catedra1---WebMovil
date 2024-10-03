@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
-namespace Catedra1___WebMovil.Src.Models
+namespace Catedra1___WebMovil.Src.DTOs
 {
-    public class User
+    public class CreateUserDto
     {
-        [Key]
-        public int Id {get; set;}
         public required string Rut {get; set;}
 
 
@@ -24,6 +22,5 @@ namespace Catedra1___WebMovil.Src.Models
 
         //TODO: DATE MENOR A ACTUAL
         public int Date {get; set;}
-
     }
 }
