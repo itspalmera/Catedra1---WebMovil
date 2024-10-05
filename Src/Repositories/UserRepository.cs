@@ -35,7 +35,8 @@ namespace Catedra1___WebMovil.Src.Repositories
         {
             return await _dataContext.Users.FindAsync(id);
         }
-        public async Task<List<User>> GetAllUsersAsync(string? sort, string? gender){
+        public async Task<List<User>> GetAllUsersAsync(string? sort, string? gender)
+        {
             var query = _dataContext.Users.AsQueryable();
 
             // Filtrar por género si se especifica
@@ -60,11 +61,19 @@ namespace Catedra1___WebMovil.Src.Repositories
             return await query.ToListAsync();
         }
 
+
         public async Task DeleteUserAsync(User user)
         {
             _dataContext.Users.Remove(user);
             await _dataContext.SaveChangesAsync();
         }
+        public async Task UpdateUserAsync(User user)
+        {
+            _dataContext.Users.Update(user);
+            await _dataContext.SaveChangesAsync();
+        }
+
+
 
 
         

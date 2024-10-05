@@ -13,5 +13,6 @@ namespace Catedra1___WebMovil.Src.Interface
         Task<User?> GetUserByIdAsync(int id);
         Task<List<User>> GetAllUsersAsync(string? sort, string? gender);
         Task DeleteUserAsync(User user);
+        Task UpdateUserAsync(User user);
     }
 }
