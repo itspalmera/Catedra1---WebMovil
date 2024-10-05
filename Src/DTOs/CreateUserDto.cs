@@ -17,10 +17,10 @@ namespace Catedra1___WebMovil.Src.DTOs
         //TODO: MAIL VALIDO
         public required string Mail {get; set;}
 
-        [RegularExpression(@"MASCULINO|FEMENINO|OTRO|PREFIERO NO DECIRLO")]       
-        public required string Genero {get; set;}
+        [RegularExpression(@"masculino|femenino|otro|prefiero no decirlo")]       
+        public required string Gender {get; set;}
 
         //TODO: DATE MENOR A ACTUAL
-        public int Date {get; set;}
+        public DateOnly BirthDate {get; set;}
     }
 }

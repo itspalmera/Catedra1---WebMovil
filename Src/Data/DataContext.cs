@@ -7,7 +7,7 @@ using Catedra1___WebMovil.Src.Models;
 
 namespace Catedra1___WebMovil.Src.Data
 {
-    public class DataContext(DbContextOptions<DataContext> options) : DbContext(options)
+    public class DataContext(DbContextOptions options) : DbContext(options)
     {
         public DbSet<User> Users { get; set; }
     }

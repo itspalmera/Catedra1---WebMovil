@@ -16,8 +16,10 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite("Data Source=catedra1.db");
 });
 
-builder.Services.AddControllers();
+
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -27,10 +29,10 @@ using (var scope = app.Services.CreateScope())
 	var context = services.GetRequiredService<DataContext>();
 
     //Migra la base en caso de no estarlo
-	await context.Database.MigrateAsync();
+	context.Database.Migrate();
 
     //rellena la base de datos
-    await Seeder.Seed(context);
+    Seeder.Initializable(context);
 }
 
 app.MapControllers();
